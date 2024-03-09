@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthenticPosts.Controllers
@@ -9,23 +10,10 @@ namespace AuthenticPosts.Controllers
 	{
 
 		[HttpGet("/login")]
-		public IActionResult Login()
+		public async Task<IActionResult> Login(SignInManager<IdentityUser> signInManager)
 		{
-			var user = new ClaimsPrincipal(
-				new ClaimsIdentity(
-					new Claim[]
-                    {
-						new Claim(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString()),
-						new Claim("my_admin_role", "admin") 
-					},
-					"cookie",
-					nameType: null,
-					roleType: "my_admin_role" // This roleType is the actual pointer to the role claim
-                )
-				
-			);
-
-			return SignIn(user, authenticationScheme:"cookie");
+			await signInManager.PasswordSignInAsync("test@gmail.com", "test", false, false);
+			return Ok();
 		}
 	}
 }
