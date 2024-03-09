@@ -11,6 +11,8 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
     <None Remove="Config\" />
+    <None Remove="Contracts\V1\Requests\" />
+    <None Remove="Contracts\V1\Responses\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" />
@@ -31,9 +33,12 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.16" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Config\" />
+    <Folder Include="Contracts\V1\Requests\" />
+    <Folder Include="Contracts\V1\Responses\" />
   </ItemGroup>
 </Project>

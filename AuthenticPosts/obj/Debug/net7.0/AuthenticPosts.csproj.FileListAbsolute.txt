@@ -228,3 +228,4 @@
 /Users/santosh/GitLab/Core/AuthenticPosts/AuthenticPosts/obj/Debug/net7.0/AuthenticPosts.pdb
 /Users/santosh/GitLab/Core/AuthenticPosts/AuthenticPosts/obj/Debug/net7.0/AuthenticPosts.genruntimeconfig.cache
 /Users/santosh/GitLab/Core/AuthenticPosts/AuthenticPosts/obj/Debug/net7.0/ref/AuthenticPosts.dll
+/Users/santosh/GitLab/Core/AuthenticPosts/AuthenticPosts/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

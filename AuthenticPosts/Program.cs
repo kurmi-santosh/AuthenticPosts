@@ -3,6 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using AuthenticPosts.Data;
 using AuthenticPosts.Services;
 using AuthenticPosts.Config;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,10 +23,53 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IPostService, PostService>();
 
+var jwtSettings = new JWTSettings();
+builder.Configuration.Bind(nameof(JWTSettings), jwtSettings);
+builder.Services.AddSingleton(jwtSettings);
+
+builder.Services.AddAuthentication(config =>
+{
+    config.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(x =>
+{
+    x.SaveToken = true;
+    x.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Secret)),
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        RequireExpirationTime = false,
+        ValidateLifetime = true
+    };
+});
 
 builder.Services.AddSwaggerGen(x =>
 {
-    x.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Posts API", Version = "v1" });
+    x.SwaggerDoc("v1", new OpenApiInfo { Title = "Posts API", Version = "v1" });
+
+    x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "JWT Auth header using the bearer scheme",
+        Name = "Authorization",
+        In= ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey
+    });
+
+    x.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme {
+                Reference = new OpenApiReference{
+                    Id = "Bearer", //The name of the previously defined security scheme.
+                    Type = ReferenceType.SecurityScheme
+                }
+            }, new List<string>()
+        }
+    });
 });
 
 var app = builder.Build();
@@ -57,7 +104,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllerRoute(
     name: "default",
