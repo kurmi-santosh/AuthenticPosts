@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AuthenticPosts.Controllers
 {
 	[ApiController]
+	[Route("homes")]
 	public class HomeController : ControllerBase
 	{
 		[HttpGet("/")]
@@ -13,7 +14,13 @@ namespace AuthenticPosts.Controllers
 			return "Index Route";
 		}
 
-		[HttpGet("/secret")]
+        [HttpGet("{id}")]
+        public String Test(string id)
+        {
+			return $"Test - {id}";
+        }
+
+        [HttpGet("/secret")]
 		[Authorize(Roles ="admin")]
 		public String Secret()
 		{

@@ -8,3 +8,6 @@ dotnet_diagnostic.CS8603.severity = none
 
 # CA1825: Avoid zero-length array allocations
 dotnet_diagnostic.CA1825.severity = none
+
+# Default severity for analyzer diagnostics with category 'Usage'
+dotnet_analyzer_diagnostic.category-Usage.severity = none
