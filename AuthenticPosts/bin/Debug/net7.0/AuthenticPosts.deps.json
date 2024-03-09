@@ -12,6 +12,7 @@
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "7.0.16",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.16",
           "Microsoft.AspNetCore.Identity.UI": "7.0.16",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.16",
           "Microsoft.EntityFrameworkCore.Design": "7.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.16",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.16",

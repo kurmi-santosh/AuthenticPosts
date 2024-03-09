@@ -4191,6 +4191,7 @@
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 7.0.16",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.16",
       "Microsoft.AspNetCore.Identity.UI >= 7.0.16",
+      "Microsoft.EntityFrameworkCore.Analyzers >= 7.0.16",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.16",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.16",
@@ -4199,19 +4200,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/santosh/.nuget/packages/": {}
+    "/Users/gn107078/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/santosh/GitLab/Core/AuthenticPosts/AuthenticPosts/AuthenticPosts.csproj",
+      "projectUniqueName": "/Users/gn107078/GitLab/Authentic_Posts/AuthenticPosts/AuthenticPosts/AuthenticPosts.csproj",
       "projectName": "AuthenticPosts",
-      "projectPath": "/Users/santosh/GitLab/Core/AuthenticPosts/AuthenticPosts/AuthenticPosts.csproj",
-      "packagesPath": "/Users/santosh/.nuget/packages/",
-      "outputPath": "/Users/santosh/GitLab/Core/AuthenticPosts/AuthenticPosts/obj/",
+      "projectPath": "/Users/gn107078/GitLab/Authentic_Posts/AuthenticPosts/AuthenticPosts/AuthenticPosts.csproj",
+      "packagesPath": "/Users/gn107078/.nuget/packages/",
+      "outputPath": "/Users/gn107078/GitLab/Authentic_Posts/AuthenticPosts/AuthenticPosts/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/santosh/.nuget/NuGet/NuGet.Config"
+        "/Users/gn107078/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -4249,6 +4250,10 @@
             "version": "[7.0.16, )"
           },
           "Microsoft.AspNetCore.Identity.UI": {
+            "target": "Package",
+            "version": "[7.0.16, )"
+          },
+          "Microsoft.EntityFrameworkCore.Analyzers": {
             "target": "Package",
             "version": "[7.0.16, )"
           },

@@ -9,13 +9,13 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AuthenticPosts
 build_property.RootNamespace = AuthenticPosts
-build_property.ProjectDir = /Users/santosh/GitLab/Core/AuthenticPosts/AuthenticPosts/
+build_property.ProjectDir = /Users/gn107078/GitLab/Authentic_Posts/AuthenticPosts/AuthenticPosts/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/santosh/GitLab/Core/AuthenticPosts/AuthenticPosts
+build_property.MSBuildProjectDirectory = /Users/gn107078/GitLab/Authentic_Posts/AuthenticPosts/AuthenticPosts
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/santosh/GitLab/Core/AuthenticPosts/AuthenticPosts/Areas/Identity/Pages/_ViewStart.cshtml]
+[/Users/gn107078/GitLab/Authentic_Posts/AuthenticPosts/AuthenticPosts/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
