@@ -6,11 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using AuthenticPosts.Contracts.V1;
 using AuthenticPosts.Domain;
 using AuthenticPosts.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace AuthenticPosts.Controllers.V1
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class PostsController : Controller
     {
         readonly IPostService _postService;

@@ -22,6 +22,13 @@ namespace AuthenticPosts.Contracts.V1
             public const string DeletePost = Base + "/posts/{postId}";
 
         }
+
+        public static class Identity
+        {
+            public const string Login = Base + "/identity/login";
+
+            public const string Register = Base + "/identity/register";
+        }
     }
 }
 

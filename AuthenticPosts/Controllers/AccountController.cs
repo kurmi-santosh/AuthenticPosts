@@ -12,7 +12,7 @@ namespace AuthenticPosts.Controllers
 		[HttpGet("/login")]
 		public async Task<IActionResult> Login(SignInManager<IdentityUser> signInManager)
 		{
-			await signInManager.PasswordSignInAsync("test@gmail.com", "test", false, false);
+			await signInManager.PasswordSignInAsync("test@test.com", "test", false, false);
 			return Ok();
 		}
 	}
