@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tz6hw2JhDQdY1Q/PycKnJIY3d6ZqdwPoDgFXbt1wL1M7tpyeAJTYx90532UwYqrS3CX6OfE3vuM2IJfbNyExyQ==",
+  "dgSpecHash": "URL+M29gh4nBvg65r3TUEUSJBafYrnGmm2+WfkTK8FXyQEW6Ecky7DM+L9/MU47Ere8xvZ/RjoOu15GhHt3nxg==",
   "success": true,
-  "projectFilePath": "/Users/gn107078/GitLab/Authentic_Posts/AuthenticPosts/Consumer/Consumer.csproj",
-  "expectedPackageFiles": [
-    "/Users/gn107078/.nuget/packages/microsoft.netcore.app.ref/7.0.15/microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "/Users/gn107078/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.15/microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
-    "/Users/gn107078/.nuget/packages/microsoft.netcore.app.host.osx-arm64/7.0.15/microsoft.netcore.app.host.osx-arm64.7.0.15.nupkg.sha512"
-  ],
+  "projectFilePath": "/Users/gn107078/GitLab/AuthenticPosts/Consumer/Consumer.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
