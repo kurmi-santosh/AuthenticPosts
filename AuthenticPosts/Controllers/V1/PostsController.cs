@@ -8,12 +8,13 @@ using AuthenticPosts.Domain;
 using AuthenticPosts.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using AuthenticPosts.Attributes;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace AuthenticPosts.Controllers.V1
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    
     public class PostsController : Controller
     {
         readonly IPostService _postService;
@@ -25,12 +26,14 @@ namespace AuthenticPosts.Controllers.V1
 
         [HttpGet]
         [Route(APIRoutes.Posts.GetAll)]
+        [Cached(600)]
         public async Task<IActionResult> GetAllPosts()
         {
             return Ok(await _postService.GetAllPostsAsync());
         }
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Route(APIRoutes.Posts.GetPostById)]
         public async Task<IActionResult> GetPostById(Guid postId)
         {

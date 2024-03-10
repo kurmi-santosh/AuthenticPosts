@@ -11,3 +11,6 @@ dotnet_diagnostic.CA1825.severity = none
 
 # Default severity for analyzer diagnostics with category 'Usage'
 dotnet_analyzer_diagnostic.category-Usage.severity = none
+
+# CS8604: Possible null reference argument.
+dotnet_diagnostic.CS8604.severity = none

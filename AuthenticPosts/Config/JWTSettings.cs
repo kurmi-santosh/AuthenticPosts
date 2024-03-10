@@ -3,7 +3,7 @@ namespace AuthenticPosts.Config
 {
 	public class JWTSettings
 	{
-		public String Secret { get; set; }
+		public string Secret { get; set; }
 	}
 }
 
