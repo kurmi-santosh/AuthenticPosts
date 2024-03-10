@@ -481,3 +481,8 @@ $RECYCLE.BIN/
 AuthenticPosts/bin
 AuthenticPosts/obj
 AuthenticPosts/.DS_Store
+
+Consumer/bin
+Consumer/obj
+Consumer/.DS_Store
+
