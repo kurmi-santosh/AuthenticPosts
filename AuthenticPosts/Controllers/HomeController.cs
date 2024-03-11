@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AuthenticPosts.Controllers
 {
 	[ApiController]
-	[Route("homes")]
+	[Route("home")]
 	public class HomeController : ControllerBase
 	{
 		[HttpGet("/")]
@@ -25,6 +25,12 @@ namespace AuthenticPosts.Controllers
 		public String Secret()
 		{
 			return "Secret route";
+		}
+
+		[HttpGet("/exception")]
+		public int Exception()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

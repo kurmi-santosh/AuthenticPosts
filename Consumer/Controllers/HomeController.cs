@@ -7,7 +7,7 @@ public class HomeController : Controller
     public Task<string> Bad()
     {
         var client = new HttpClient() { BaseAddress = new Uri("http://localhost:5131") };
-        return client.GetStringAsync($"/homes/{Guid.NewGuid()}");
+        return client.GetStringAsync($"/home/{Guid.NewGuid()}");
     }
 
     public Task<string> Simple([FromServices] IHttpClientFactory factory)
@@ -15,7 +15,7 @@ public class HomeController : Controller
         var client = factory.CreateClient();
         client.BaseAddress = new Uri("http://localhost:5131");
 
-        return client.GetStringAsync($"/homes/{Guid.NewGuid()}");
+        return client.GetStringAsync($"/home/{Guid.NewGuid()}");
     }
 
 

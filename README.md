@@ -134,3 +134,76 @@ Posts service with .NET Core 7 having EF Core and JWT Authentication
     set "key" "value"
     get "key"
 ```
+
+### Implementing Pagination
+
+- Wrap the response as data and add
+
+### Error Handling
+
+- via ExceptionFilter attribute
+
+  - CONCERNED ONLY ABOUT ERRORS IN MY CODE - Use Filter
+
+  ```c#
+    public class ErrorHandlingAttribute : ExceptionFilterAttribute
+    {
+        public override void OnException(ExceptionContext context)
+        {
+            var exception = context.Exception;
+            // ObjectResult excepts an object - We can pass ProblemDetails instead of creating our own
+            var errorDetails = new ObjectResult(problemDetails);
+
+            context.Result = errorDetails;
+            context.ExceptionHandled = true;
+        }
+    }
+
+  ```
+
+- via Middleware
+
+  - CONCERNED ABOUT ERRORS IN THE ASP.NET FRAMEWORK - Use Middleware
+
+  ```c#
+    public class ErrorHandlingMiddleware
+    {
+        private readonly RequestDelegate _next;
+
+        public ErrorHandlingMiddleware(RequestDelegate next)
+        {
+            _next = next;
+        }
+
+        public async Task Invoke(HttpContext context)
+        {
+            try
+            {
+                await _next(context);
+            }
+            catch(Exception ex)
+            {
+                var result = JsonConvert.SerializeObject(new { error = ex.Message });
+
+                    context.Response.ContentType = "application/json";
+                    context.Response.StatusCode = 500;
+                    return context.Response.WriteAsync(result);
+            }
+        }
+    }
+
+  ```
+
+- CAPTURE THE GLOBAL ERRORS IN THE ASP.NET FRAMEWORK AS WELL AS I HAVE UNIQUE LOGIC BASED ON WHERE THE ERROR OCCURRED - Use Both
+
+- Problem Details with error controller
+
+```c#
+    app.UseExceptionHandler("/error");
+    app.Map("/error", (HttpContext ctx) =>
+    {
+        var exception = ctx.Features.Get<IExceptionHandlerFeature>()?.Error;
+        return Results.Problem(title: ex?.Message, statusCode: 500);
+    });
+
+```

@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
-
+using AuthenticPosts.Middlewares;
+using AuthenticPosts.Attributes;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 {
@@ -23,7 +25,7 @@ var builder = WebApplication.CreateBuilder(args);
     {
         options.SignIn.RequireConfirmedAccount = true;
 
-        options.User.RequireUniqueEmail = false;
+        options.User.RequireUniqueEmail = true;
 
         options.Password.RequireDigit = false;
         options.Password.RequiredLength = 4;
@@ -102,6 +104,13 @@ var builder = WebApplication.CreateBuilder(args);
         });
     });
 
+    // Add Controllers
+
+    builder.Services.AddControllers(options =>
+    {
+        options.Filters.Add<ErrorHandlingAttribute>();
+    });
+
     // Add services
 
     builder.Services.AddScoped<IIdentityService, IdentityService>();
@@ -125,6 +134,8 @@ var app = builder.Build();
         app.UseHsts();
     }
 
+    // Swagger middleware
+
     var swaggerOptions = new SwaggerOptions();
     builder.Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
 
@@ -137,6 +148,18 @@ var app = builder.Build();
     {
         option.SwaggerEndpoint(swaggerOptions.UIEndpoint, "v1");
     });
+
+    // Error handling
+
+    // app.UseMiddleware<ErrorHandlingMiddleware>();
+    app.UseExceptionHandler("/error");
+    /*
+         app.Map("/error", (HttpContext ctx) =>
+        {
+            var exception = ctx.Features.Get<IExceptionHandlerFeature>()?.Error;
+            return Results.Problem();
+        });
+    */
 
     app.UseHttpsRedirection();
     app.UseStaticFiles();
