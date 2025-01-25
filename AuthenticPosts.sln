@@ -10,8 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer", "Consumer\Consumer.csproj", "{BB2A775E-DA5E-44A4-8515-452B5C4AC584}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,10 +20,6 @@ Global
 		{A066B368-8482-4732-91B1-42C372F965E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A066B368-8482-4732-91B1-42C372F965E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A066B368-8482-4732-91B1-42C372F965E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB2A775E-DA5E-44A4-8515-452B5C4AC584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB2A775E-DA5E-44A4-8515-452B5C4AC584}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB2A775E-DA5E-44A4-8515-452B5C4AC584}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB2A775E-DA5E-44A4-8515-452B5C4AC584}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

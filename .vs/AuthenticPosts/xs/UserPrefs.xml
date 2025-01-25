@@ -1,24 +1,66 @@
-﻿<Properties StartupConfiguration="{BB2A775E-DA5E-44A4-8515-452B5C4AC584}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Consumer/.gitignore">
+﻿<Properties StartupConfiguration="{A066B368-8482-4732-91B1-42C372F965E6}|https">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AuthenticPosts/Program.cs">
     <Files>
-      <File FileName="Consumer/.gitignore" Line="489" Column="19" />
+      <File FileName="AuthenticPosts/Controllers/V1/IdentityController.cs" />
+      <File FileName="AuthenticPosts/Controllers/V1/PostsController.cs" />
+      <File FileName="AuthenticPosts/Contracts/V1/APIRoutes.cs" />
+      <File FileName="AuthenticPosts/Services/IdentityService.cs" />
+      <File FileName="AuthenticPosts/Services/IIdentityService.cs" />
+      <File FileName="AuthenticPosts/Domain/AuthenticationResult.cs" />
+      <File FileName="AuthenticPosts/Contracts/V1/Requests/UserRegistrationRequest.cs" />
+      <File FileName="AuthenticPosts/Program.cs" Line="168" Column="1" />
+      <File FileName="AuthenticPosts/appsettings.json" />
+      <File FileName="AuthenticPosts/Contracts/V1/Requests/PostRequest.cs" />
+      <File FileName="AuthenticPosts/Controllers/AccountController.cs" />
+      <File FileName="AuthenticPosts/Contracts/V1/Responses/AuthFailedResponse.cs" />
+      <File FileName="AuthenticPosts/Contracts/V1/Responses/AuthSuccessResponse.cs" />
+      <File FileName="AuthenticPosts/Controllers/HomeController.cs" />
+      <File FileName="AuthenticPosts/Data/DataContext.cs" />
+      <File FileName="Consumer/Controllers/HomeController.cs" />
+      <File FileName="Consumer/Program.cs" />
+      <File FileName="AuthenticPosts/Services/IResponseCacheService.cs" />
+      <File FileName="AuthenticPosts/Services/ResponseCacheService.cs" />
+      <File FileName="AuthenticPosts/Config/RedisCacheSettings.cs" />
+      <File FileName="AuthenticPosts/Attributes/CachedAttribute.cs" />
+      <File FileName="AuthenticPosts/Services/IPostService.cs" />
+      <File FileName="AuthenticPosts/Services/PostService.cs" />
+      <File FileName="AuthenticPosts/Domain/PostEntity.cs" />
+      <File FileName="AuthenticPosts/Config/SwaggerOptions.cs" />
+      <File FileName="AuthenticPosts/Middlewares/ErrorHandlingMiddleware.cs" />
+      <File FileName="AuthenticPosts/Attributes/ErrorHandlingAttribute.cs" />
+      <File FileName="Consumer/Controllers/BlobStorageController.cs" />
+      <File FileName="Consumer/appsettings.json" />
+      <File FileName="Consumer/Services/IBlobStorageService.cs" />
+      <File FileName="Consumer/Services/BlobStorageService.cs" />
+      <File FileName="AuthenticPosts/app.db" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="AuthenticPosts">
-            <Node name="Consumer" selected="True" />
+          <Node name="AuthenticPosts" expanded="True">
+            <Node name="Solution Items" expanded="True" />
+            <Node name="AuthenticPosts" expanded="True">
+              <Node name="Attributes" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="V1" expanded="True" />
+              </Node>
+              <Node name="Middlewares" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+            <Node name="Consumer" expanded="True">
+              <Node name="Services" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Consumer PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.AuthenticPosts PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.AuthenticPosts PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.Consumer PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
